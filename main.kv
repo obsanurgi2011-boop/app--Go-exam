@@ -1,0 +1,73 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: "vertical"
+
+        TextInput:
+            id: username
+            hint_text: "Username"
+
+        TextInput:
+            id: password
+            hint_text: "Password"
+            password: True
+
+        Button:
+            text: "Login"
+            on_release: root.login()
+
+
+<DashboardScreen>:
+    BoxLayout:
+        orientation: "vertical"
+
+        Button:
+            text: "Admin"
+            on_release: app.root.current = "admin"
+
+        Button:
+            text: "Teacher"
+            on_release: app.root.current = "teacher"
+
+        Button:
+            text: "Student"
+            on_release: app.root.current = "student"
+
+
+<AdminScreen>:
+    BoxLayout:
+        Label:
+            text: "ADMIN"
+
+        Button:
+            text: "Back"
+            on_release: root.go_back()
+
+
+<TeacherScreen>:
+    BoxLayout:
+        Label:
+            text: "TEACHER"
+
+        Button:
+            text: "Start Exam"
+            on_release: root.open_exam()
+
+
+<StudentScreen>:
+    BoxLayout:
+        Label:
+            text: "STUDENT"
+
+        Button:
+            text: "Take Exam"
+            on_release: root.open_exam()
+
+
+<ExamScreen>:
+    BoxLayout:
+        Label:
+            text: "EXAM SCREEN"
+
+        Button:
+            text: "Finish"
+            on_release: root.finish_exam()
