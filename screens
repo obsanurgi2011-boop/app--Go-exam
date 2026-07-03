@@ -1,1 +1,13 @@
 
+from kivy.uix.screenmanager import Screen
+
+
+class LoginScreen(Screen):
+    def login(self):
+        u = self.ids.username.text
+        p = self.ids.password.text
+
+        if u == "admin" and p == "1234":
+            self.manager.current = "dashboard"
+        else:
+            print("Wrong login")
